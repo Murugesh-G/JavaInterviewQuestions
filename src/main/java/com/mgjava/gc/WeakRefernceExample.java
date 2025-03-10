@@ -4,10 +4,14 @@ import java.lang.ref.WeakReference;
 
 public class WeakRefernceExample {
     public static void main(String[] args) {
+        // Creating a weak reference to a Data object
         WeakReference<Data> weakRef = new WeakReference<>(new Data("Weak Object"));
-        System.out.println("Before GC: " + weakRef.get());
+        // Checking if the object is still accessible
+        System.out.println("Before GC: " + weakRef.get());// Output: Weak Object
+        // Suggesting GC to run
         System.gc();
-        System.out.println("After GC: " + weakRef.get());
+        // Checking after GC
+        System.out.println("After GC: " + weakRef.get());// Output: null (most likely)
     }
 
 }
